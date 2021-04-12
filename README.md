@@ -1,4 +1,4 @@
-<h>AURIX™ino</h)
+<h>AURIX™ino</h>
 
 Years back, I did develop the adaptation of Arduino to the Infineon XMC product family. I think it was 2014 and I spent some night to work on that. It was fan and my goal was not to create anything professional, as later on was done by Infineon directly. 
 
