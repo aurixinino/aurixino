@@ -24,6 +24,12 @@ I've started this porting project because I like very much the simplicity and in
   <li>AURIX™ code examples and Low Level drivers (iLLD).</li>
 </ul>
 
+<h2>Where to start?</h2>
+To follow me and understand step by step what I'm doing, have a look at: https://aurixino.blogspot.com/
+
 <h2>DISCLAMER</h2>
 
 All information and software available on this repository is provided AS IS, without any warranty, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose or non-infringement, other than those warranties which are imposed by and incapable of exclusion, restriction or modification under the laws applicable to this agreement.
+
+
+
