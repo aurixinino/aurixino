@@ -22,5 +22,5 @@ AURIX™ professional Development Studio environment (IDE), Eclipse based;
 AURIX™ professional debug environment (Tasking plug-in); 
 AURIX™ code examples and Low Level drivers (iLLD).
 
-DISCLAMER
+<h2>DISCLAMER</h2>
 All information and software available on this website is provided AS IS, without any warranty, either express or implied, including, but not limited to, the implied warranties of merchantability, fitness for a particular purpose or non-infringement, other than those warranties which are imposed by and incapable of exclusion, restriction or modification under the laws applicable to this agreement.
