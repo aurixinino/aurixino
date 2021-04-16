@@ -9,3 +9,6 @@ This example, can be recreated on your host computer by:
   6. compile
   7. flash
   8. observe example behaviour as described into https://aurixino.blogspot.com/2021/04/led-blink-in-aurixmulticore.html
+
+
+<b>Notes:</b> to oberserve the CPU syncronization, enable the following code '//TO TEST THE DESYNC: semaphore_wait(s_cpuSync);' in cpu0_setup() function (in the dowloaded file it is commented out)
