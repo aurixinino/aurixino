@@ -30,6 +30,8 @@ void cpu1_setup() {
 // set-up function for CPU2
 void cpu2_setup() {
 
+    Consolle_print("HALLO from CPU3!"ENDLINE);
+
 }
 
 // loop function for CPU0
