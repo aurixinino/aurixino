@@ -65,7 +65,7 @@ extern void Consolle_print(const void *data);
  *
  * \return null
  */
-extern void println(const void *data);
+extern void Consolle_println(const void *message);
 
 
 #ifdef __cplusplus
