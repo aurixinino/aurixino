@@ -108,7 +108,7 @@ void arduino_init(void)
       //wiring_analog_init(); TODO
 
       // Serial Initialization
-      //TODO: Consolle_init();
+      Consolle_init();
 }
 
 //****************************************************************************
