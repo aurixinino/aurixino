@@ -1,9 +1,10 @@
 <h1> Content of this Example </h1>
 
- 0. https://aurixino.blogspot.com/2021/04/wiring-language-consolle-print-and.html
- 1. https://aurixino.blogspot.com/2021/04/led-blink-in-aurixmulticore.html
- 2. https://aurixino.blogspot.com/2021/04/arduino-digital-pins-in-aurix.html
- 3. https://aurixino.blogspot.com/2021/04/aurix-board-tc275-lite-kit-to-arduino.html
+ 0. https://aurixino.blogspot.com/2021/05/wiring-language-analogue-pins-in-aurix.html
+ 1. https://aurixino.blogspot.com/2021/04/wiring-language-consolle-print-and.html
+ 2. https://aurixino.blogspot.com/2021/04/led-blink-in-aurixmulticore.html
+ 3. https://aurixino.blogspot.com/2021/04/arduino-digital-pins-in-aurix.html
+ 4. https://aurixino.blogspot.com/2021/04/aurix-board-tc275-lite-kit-to-arduino.html
 
 
 <h2> How to Compile the Example </h2>
