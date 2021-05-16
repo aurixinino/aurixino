@@ -1,42 +1,23 @@
-/*
-
-
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details.
-
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
-
-//****************************************************************************
-// @Module        Arduino main hardware interface layer
-// @Filename      Arduino.c
+// @Module        Memory emulated serial Consolle (to be read via dedicated server).
+// @Filename      DebugConsolle.h
 // @Project       Arduino_AURIX
 //----------------------------------------------------------------------------
 // @Controller    Infineon TC275 Lite Kit
 //
 // @Compiler      ADS
 //
-// @Codegenerator none
+// @Codegenerator
 //
 // @Description   This file contains low level functions to implement the
-//                  Wiring language infrastructure
+//                  Debug Consolle via the DAS server (memory emulation of
+//                  serial comunication between AURIX and PC.
 //
-// @Link          https://www.arduino.cc/reference/en/
+// @Link          none
 //
 //----------------------------------------------------------------------------
-// @Date          12/04/2021
+// @Date          20/04/2021
 //
 //****************************************************************************
-
 
 
 //****************************************************************************
@@ -44,6 +25,8 @@
 //****************************************************************************
 
 #include "Arduino.h"
+#include "string.h"
+#include "DebugConsolle.h"
 
 //****************************************************************************
 // @Macros
@@ -68,7 +51,11 @@
 //****************************************************************************
 // @Global Variables
 //****************************************************************************
+DC_buffer_t g_dcBuffer[DEBUG_CONSOLLE_SIZE];
 
+DC_buffer_t *g_dcStartRecord = g_dcBuffer;
+DC_buffer_t *g_dcEndRecord = &g_dcBuffer[DEBUG_CONSOLLE_SIZE];
+DC_buffer_t *g_dcNextRecord = NULL;
 
 //****************************************************************************
 // @External Prototypes
@@ -79,11 +66,18 @@
 // @Prototypes Of Local Functions
 //****************************************************************************
 
+
+
+/*********************************************************************************************************************/
+/*---------------------------------------------Function Implementations----------------------------------------------*/
+/*********************************************************************************************************************/
+
+
 //****************************************************************************
-// @Function      arduino_init
+// @Function     DC_init
 //
 //----------------------------------------------------------------------------
-// @Description   Initialize the Arduino layer.
+// @Description   This function initializes the Debug Console module
 //
 //
 //----------------------------------------------------------------------------
@@ -93,26 +87,57 @@
 // @Parameters    None
 //
 //----------------------------------------------------------------------------
-// @Link
+// @Link          none
 //----------------------------------------------------------------------------
-// @Date          12/04/2021
+// @Date          27/04/2021
 //
 //****************************************************************************
-
-void arduino_init(void)
+void DebugConsolle_init(void)
 {
-      /*
-       *  Peripherals Initialization
-       */
-      wiring_digital_init();
-      wiring_analog_init();
+    // Set the Initial Marker into the Debug Console Buffer
+    DC_message dcStartup;
 
-      // Serial Initialization
-      Consolle_init();
+    dcStartup.sev = DC_INIT;
+    dcStartup.message = "HELLO ADC\0";
+    size_t iLen = strlen(dcStartup.message)+4;
 
-      // Debug Console Initialization
-      DebugConsolle_init();
+    memcpy(g_dcBuffer, &dcStartup, iLen );
 }
+
+
+//****************************************************************************
+// @Function     DC_print
+//
+//----------------------------------------------------------------------------
+// @Description   The print() method writes data to the serial port. This is
+//                  often helpful for looking at the data a program is
+//                  producing or to write data to other devices connected to
+//                  the serial port.
+//
+//
+//----------------------------------------------------------------------------
+// @Returnvalue   None
+//
+//----------------------------------------------------------------------------
+// @Parameters    DC_message msg
+//
+//----------------------------------------------------------------------------
+// @Link
+//----------------------------------------------------------------------------
+// @Date          15/04/2021
+//
+//****************************************************************************
+void DC_print(DC_message msg)
+{
+   ;
+}
+
+
+//****************************************************************************
+// @Local Functions
+//****************************************************************************
+
+
 
 //****************************************************************************
 //                                 END OF FILE

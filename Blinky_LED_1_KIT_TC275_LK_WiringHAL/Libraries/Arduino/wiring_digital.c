@@ -148,7 +148,8 @@ void wiring_digital_init(void)
 
         IfxPort_Io_initModule(&confDigital);
 
-#else
+#endif
+
     // LED1 Port Initialization
         /* Initialization of the LED1 available on board and Switch OFF the LED (low-level active) */
         IfxPort_setPinModeOutput(LED1_P, IfxPort_OutputMode_pushPull, IfxPort_OutputIdx_general);
@@ -160,8 +161,6 @@ void wiring_digital_init(void)
 
     // BUTTON Port Initialization
         IfxPort_setPinModeInput(BUTTON_P, IfxPort_Mode_inputPullUp);
-
-#endif
 }
 
 

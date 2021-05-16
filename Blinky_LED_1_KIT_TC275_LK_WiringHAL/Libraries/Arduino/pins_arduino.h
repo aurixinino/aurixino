@@ -78,7 +78,7 @@
 //------------------------------------------------------
 
 
-// Port Numeric Definition
+// Port Numeric Definition - Digital Pins
 #define D0      0
 #define D1      1
 #define D2      2
@@ -135,13 +135,16 @@
 
 //...
 
+// Port Numeric Definition - Analogue Pins
+#define A0      20
+#define A1      21
+#define A2      22
+#define A3      23
+#define A4      24
+#define A5      25
+#define TRIMM   26
+//...
 
-// A0   P2.6        AA
-// A1   P2.8        AB
-// A2   P2.9        AC
-// A3   P2.10       AD
-// A4   P2.11       AE
-// A5   P2.2        AF
 
 #if TODO
 static const uint8 SS   = 10;
@@ -154,12 +157,7 @@ static const uint8 SCL = 19;
 static const uint8 LED_BUILTIN = 13;
 #endif
 
-#define A0  20
-#define A1  21
-#define A2  22
-#define A3  23
-#define A4  24
-#define A5  25
+
 
 
 
@@ -180,52 +178,5 @@ typedef enum _EAnalogChannel
   ADC5,
 } EAnalogChannel ;
 
-#if 0
-typedef struct xmc_pin_info {
-    PORT0_Type* gpio_device;        /**< XMC1x00 pin's GPIO device */
-    uint8 gpio_bit;               /**< Pin's GPIO port bit. */
-        //timer_dev *timer_device;    /**< Pin's timer device, if any. */
-        //uint8 timer_channel;      /**< Timer channel, or 0 if none. */
-        //const adc_dev *adc_device;  /**< ADC device, if any. */
-        //uint8 adc_channel;        /**< Pin ADC channel, or ADCx if none. */
-} xmc_pin_info;
-
-extern const xmc_pin_info PIN_MAP[NUM_DIGITAL_PINS] = {
-    {PORT1, 2},             /*!< Arduino_0 == PORT1.2    */
-    {PORT1, 3},             /*!< Arduino_1 == PORT1.3    */
-    {PORT1, 4},             /*!< Arduino_2 == PORT1.4    */
-    {PORT0, 0},             /*!< Arduino_3 == PORT0.0    */
-    {PORT0, 1},             /*!< Arduino_4 == PORT0.1    */
-};
-#endif
-
-/*
-#define digitalPinToPCICR(p)    (((p) >= 0 && (p) <= 21) ? (&PCICR) : ((uint8 *)0))
-#define digitalPinToPCICRbit(p) (((p) <= 7) ? 2 : (((p) <= 13) ? 0 : 1))
-#define digitalPinToPCMSK(p)    (((p) <= 7) ? (&PCMSK2) : (((p) <= 13) ? (&PCMSK0) : (((p) <= 21) ? (&PCMSK1) : ((uint8 *)0))))
-#define digitalPinToPCMSKbit(p) (((p) <= 7) ? (p) : (((p) <= 13) ? ((p) - 8) : ((p) - 14)))
-*/
-
-
-/*
-#define analogInputToDigitalPin(p) (((p) < 10) ? (p) + 14 : -1)
-#define digitalPinHasPWM(p) (((p) >= 3 && (p) <= 6) || (p) == 9 || (p) == 10 || ((p) >= 20 && (p) <= 23))
-
-#define NOT_AN_INTERRUPT -1
-#define digitalPinToInterrupt(p)  ((p) < NUM_DIGITAL_PINS ? (p) : -1)
-
-
-
-
-#define NOT_ON_TIMER 0
-static inline uint8 digitalPinToTimer(uint8) __attribute__((always_inline, unused));
-static inline uint8 digitalPinToTimer(uint8 pin)
-{
-    if (pin >= 3 && pin <= 6) return pin - 2;
-    if (pin >= 9 && pin <= 10) return pin - 4;
-    if (pin >= 20 && pin <= 23) return pin - 13;
-    return NOT_ON_TIMER;
-}
-*/
 
 #endif /* PINS_ARDUINO_H_ */

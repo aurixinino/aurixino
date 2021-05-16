@@ -1,5 +1,5 @@
 //****************************************************************************
-// @Module        Arduino-compatible Consolle (Serial port communication).
+// @Module        Arduino-compatible Console (Serial port communication).
 // @Filename      Consolle.h
 // @Project       Arduino_AURIX
 //----------------------------------------------------------------------------
@@ -245,14 +245,11 @@ void Consolle_print(const void *message)
 //****************************************************************************
 void Consolle_println(const void *message)
 {
-    // Conactenate given string with CR-NL and print
+    // Concatenate given string with CR-NL and print
     char      msg[STDIF_DPIPE_MAX_PRINT_SIZE + 1];
     strcat ( (char * ) message, ENDLINE);
     Consolle_print(msg);
 }
-
-
-
 
 
 //****************************************************************************

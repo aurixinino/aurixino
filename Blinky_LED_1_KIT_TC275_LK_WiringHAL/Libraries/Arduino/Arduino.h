@@ -49,11 +49,13 @@ extern "C"{
 //****************************************************************************
 // #include general HEADER FILES.
 #include "Platform_Types.h"
+#include "stdio.h"
+#include "string.h"
 
 // #include Arduino HEADER FILES.
 #include "pins_arduino.h"
 #include "wiring_digital.h"
-//#include "wiring_analog.h"
+#include "wiring_analog.h"
 //#include "wiring_shift.h"
 #include "wiring_time.h"
 //#include "wiring_clock.h"
@@ -61,6 +63,7 @@ extern "C"{
 //#include "dtostrf.h"
 
 #include "Consolle.h"
+#include "DebugConsolle.h"
 #include "semaphore.h"
 
 /* Arduino wiring macros and bit defines  */
